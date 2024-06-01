@@ -1,4 +1,3 @@
-// star-wars-mern/client/src/components/SearchPage.js
 import React, { useState } from 'react';
 import { searchCategory } from '../services/api';
 import { Link } from 'react-router-dom';

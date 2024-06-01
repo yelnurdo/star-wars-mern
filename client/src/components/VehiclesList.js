@@ -1,4 +1,3 @@
-// starwars-mern/client/src/components/VehiclesList.js
 import React, { useEffect, useState } from 'react';
 import { fetchVehicles } from '../services/api';
 import { Link } from 'react-router-dom';

@@ -1,12 +1,14 @@
-// star-wars-mern/client/src/components/CharacterDetails.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchCharacterDetails } from '../services/api';
+import AuthContext from '../context/AuthContext';
+import api from '../utils/api';
 import './Details.css';
 
 const CharacterDetails = () => {
   const { id } = useParams();
   const [character, setCharacter] = useState(null);
+  const { auth } = useContext(AuthContext);
 
   useEffect(() => {
     const getCharacterDetails = async () => {
@@ -20,6 +22,19 @@ const CharacterDetails = () => {
 
     getCharacterDetails();
   }, [id]);
+
+  const handleAddFavorite = async () => {
+    if (!auth.user) {
+      alert('You must be logged in to add favorites');
+      return;
+    }
+    try {
+      await api.post('/favorites', { itemId: id });
+      alert('Added to favorites');
+    } catch (error) {
+      console.error('Error adding to favorites:', error);
+    }
+  };
 
   if (!character) {
     return <div>Loading...</div>;
@@ -35,6 +50,7 @@ const CharacterDetails = () => {
       <p>Eye Color: {character.eye_color}</p>
       <p>Birth Year: {character.birth_year}</p>
       <p>Gender: {character.gender}</p>
+      {auth.user && <button onClick={handleAddFavorite}>Add to Favorites</button>}
     </div>
   );
 };

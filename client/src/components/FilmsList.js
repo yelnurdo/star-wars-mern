@@ -1,4 +1,3 @@
-// starwars-mern/client/src/components/FilmsList.js
 import React, { useEffect, useState } from 'react';
 import { fetchFilms } from '../services/api';
 import { Link } from 'react-router-dom';

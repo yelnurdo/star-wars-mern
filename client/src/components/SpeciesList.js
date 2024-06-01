@@ -1,4 +1,3 @@
-// starwars-mern/client/src/components/SpeciesList.js
 import React, { useEffect, useState } from 'react';
 import { fetchSpecies } from '../services/api';
 import { Link } from 'react-router-dom';

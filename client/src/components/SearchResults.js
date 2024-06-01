@@ -1,4 +1,3 @@
-// starwars-mern/client/src/components/SearchResults.js
 import React, { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { searchCategory } from '../services/api';

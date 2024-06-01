@@ -1,4 +1,3 @@
-// starwars-mern/client/src/components/StarshipsList.js
 import React, { useEffect, useState } from 'react';
 import { fetchStarships } from '../services/api';
 import { Link } from 'react-router-dom';

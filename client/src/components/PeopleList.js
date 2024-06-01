@@ -1,4 +1,3 @@
-// starwars-mern/client/src/components/PeopleList.js
 import React, { useEffect, useState } from 'react';
 import { fetchPeople } from '../services/api';
 import { Link } from 'react-router-dom';

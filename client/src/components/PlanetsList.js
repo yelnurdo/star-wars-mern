@@ -1,4 +1,3 @@
-// starwars-mern/client/src/components/PlanetsList.js
 import React, { useEffect, useState } from 'react';
 import { fetchPlanets } from '../services/api';
 import { Link } from 'react-router-dom';
