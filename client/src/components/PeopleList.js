@@ -1,6 +1,7 @@
 // starwars-mern/client/src/components/PeopleList.js
 import React, { useEffect, useState } from 'react';
 import { fetchPeople } from '../services/api';
+import { Link } from 'react-router-dom';
 
 const PeopleList = () => {
   const [people, setPeople] = useState([]);
@@ -22,7 +23,9 @@ const PeopleList = () => {
       <h1>Star Wars Characters</h1>
       <ul>
         {people.map(person => (
-          <li key={person.name}>{person.name}</li>
+          <li key={person.name}>
+            <Link to={`/people/${person.url.split('/').slice(-2, -1)[0]}`}>{person.name}</Link>
+          </li>
         ))}
       </ul>
     </div>
